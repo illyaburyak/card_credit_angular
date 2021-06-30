@@ -9,7 +9,7 @@ import {DateFormControl} from "../date-form-control";
 })
 export class CardFormComponent implements OnInit {
   cardForm = new FormGroup({
-    name: new FormControl('', [
+    name: new FormControl('asd', [
       Validators.required,
       Validators.minLength(3),
     ]),
@@ -38,5 +38,9 @@ export class CardFormComponent implements OnInit {
 
   onSubmit() {
     console.log('Form was submitted')
+  }
+
+  onResetClick() {
+    this.cardForm.reset();
   }
 }
